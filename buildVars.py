@@ -3,6 +3,8 @@
 # Build customizations
 # Change this file instead of sconstruct or manifest files, whenever possible.
 
+from glob import glob
+
 # Full getext (please don't change)
 _ = lambda x : x
 
@@ -34,7 +36,7 @@ import os.path
 # Define the python files that are the sources of your add-on.
 # You can use glob expressions here, they will be expanded.
 pythonSources = [
-	'addon/globalPlugins/*/*.py',
+	'addon/globalPlugins/jumpToError/*.py',
 ]
 
 # Files that contain strings for translation. Usually your python sources
