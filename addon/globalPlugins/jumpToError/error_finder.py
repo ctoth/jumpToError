@@ -1,7 +1,7 @@
 import re
 
 ERROR_PATTERNS = {
-	'python': re.compile(r'File "(.+?)", line (\d+) .*'),
+	'python': re.compile(r'File "(.+?)", line (\d+)'),
 	'java': re.compile(r"^ *(?:\[javac\])? *(.+\.java):(\d+): .*"),
 }
 
@@ -11,5 +11,5 @@ def get_file_and_line(s):
 	for name, pattern in ERROR_PATTERNS.iteritems():
 		match = pattern.search(s)
 		if match is not None:
-			return match.group(1), match.group(2)
+			return match.group(1), int(match.group(2))
 	return None, None
