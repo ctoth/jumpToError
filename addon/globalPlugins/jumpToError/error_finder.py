@@ -11,5 +11,5 @@ def get_file_and_line(s):
 	for name, pattern in ERROR_PATTERNS.iteritems():
 		match = pattern.search(s)
 		if match is not None:
-			return r.group(1), r.group(2)
+			return match.group(1), match.group(2)
 	return None, None
