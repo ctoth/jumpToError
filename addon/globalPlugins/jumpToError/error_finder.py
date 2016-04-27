@@ -2,6 +2,7 @@ import re
 
 ERROR_PATTERNS = {
 	'python': re.compile(r'File "(.+?)", line (\d+)'),
+	'pdb': re.compile(r'> (.+?)\((\d)\)'),
 	'java': re.compile(r"^ *(?:\[javac\])? *(.+\.java):(\d+): .*"),
 }
 
