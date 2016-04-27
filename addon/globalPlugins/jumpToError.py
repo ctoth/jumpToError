@@ -27,20 +27,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	"KB:NVDA+g":"goToError",
 }
 
-patterns = {
+ERROR_PATTERNS = {
 	'python': re.compile(r'File "(.+?)", line (\d+)'),
 	'java': re.compile(r"^ *(?:\[javac\])? *(.+\.java):(\d+): .*"),
 }
 
-
-
 def get_file_and_line(s):
 	"""Tries to get the file and line of an error message.
 	Returns a tuple of (file, line) as strings, or (None, None) if it fails."""
-	r = java_re.match(s)
-	if r is not None:
-		return r.group(1), r.group(2)
-	r = python_re.search(s)
-	if r is not None:
-		return r.group(1), r.group(2)
+	for name, pattern in ERROR_PATTERNS:
+		match = pattern.match(s)
+		if match is not None:
+			return r.group(1), r.group(2)
 	return None, None
