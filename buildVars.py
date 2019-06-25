@@ -21,7 +21,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description" : _("""Open your editor to the line mentioned in a traceback"""),
 	# version
-	"addon_version" : "0.2",
+	"addon_version" : "1.0",
 	# Author(s)
 	"addon_author" : u"Christopher Toth <q@q-continuum.net>, Tyler Spivey <tspivey@pcdesk.net>",
 	# URL for the add-on documentation support
