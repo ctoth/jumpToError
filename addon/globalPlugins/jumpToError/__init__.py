@@ -1,4 +1,4 @@
 try:
-	from addon import *
+	from .addon import *
 except ImportError: #We're running under pytest not NVDA
-	import error_finder
+	from . import error_finder
